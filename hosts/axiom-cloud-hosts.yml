@@ -1,0 +1,57 @@
+generated: '2026-09-27'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 3
+  own: 3
+  other_domain: 0
+  platform: 0
+  roles:
+  - api
+  - docs
+  - website
+hosts:
+- host: api.axiom.trade
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: axiom.trade
+  role: api
+  relation: own
+- host: axiom.trade
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  serves:
+  - cdn
+  vendor: cloudflare
+  registrable_domain: axiom.trade
+  role: website
+  relation: own
+- host: docs.axiom.trade
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - site-links
+  - namespace-probe
+  - docs-index
+  - contract-discovery
+  - well-known
+  types:
+  - GettingStarted
+  - Documentation
+  serves:
+  - docs
+  title: Axiom – The Future of Trading | Axiom
+  status: 200
+  registrable_domain: axiom.trade
+  role: docs
+  relation: own

@@ -1,25 +1,86 @@
 aid: axiom-cloud
+
 name: Axiom Cloud
-description: 'Axiom Cloud is a company surfaced via the API Evangelist harvest backlog (source: secondary-market;
-  backed by leadout-capital) and added to the network as a stub for full-pipeline profiling.'
+
+description: Axiom Cloud provides a suite of blockchain-based trading and settlement services, offering APIs for on‑chain asset management, market
+  data, and automated trading. The platform aims to simplify decentralized finance integration for developers and enterprises, delivering secure,
+  scalable, and compliant solutions across multiple blockchain networks. It supports real‑time data feeds, order execution, and portfolio analytics
+  through RESTful endpoints and WebSocket streams.
+
 url: https://raw.githubusercontent.com/api-evangelist/axiom-cloud/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-27 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-27'
+
 modified: '2026-09-27'
+
 tags:
 - Company
-apis: []
+- Blockchain
+- Trading
+- API
+- FinTech
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
+common:
+- type: LLMsTxt
+  url: llms/axiom-cloud-llms.txt
+- type: WellKnown
+  url: well-known/axiom-cloud-well-known.yml
+- type: Hosts
+  url: hosts/axiom-cloud-hosts.yml
+- type: Vendors
+  url: vendors/axiom-cloud-vendors.yml
+- type: GettingStarted
+  url: https://docs.axiom.trade/getting-started/signup
+- type: Documentation
+  url: https://docs.axiom.trade/
+- type: DomainSecurity
+  url: security/axiom-cloud-domain-security.yml
+- type: Website
+  url: https://axiom.trade
+  x-coverage:
+    state: blocked
+    reason: bot-challenge
+    status: 403
+
+apis:
+- name: Axiom Cloud API
+  description: API for Axiom Cloud blockchain trading services
+  humanURL: https://docs.axiom.trade
+  baseURL: null
+  properties: []
+  aid: axiom-cloud:axiom-cloud-api
+
 x-backed-by:
 - leadout-capital
-common:
-- type: Website
-  url: https://www.nasdaqprivatemarket.com/
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: No OpenAPI or other machine‑readable contract found on API or docs hosts.
+  evidence:
+  - url: https://api.axiom.trade/openapi.json
+    status: 425
+  - url: https://docs.axiom.trade/openapi.json
+    status: 404
+  checked: '2026-09-27'
+x-enrichment:
+  date: '2026-09-27'
+  status: enriched
+  artifacts_added: 8
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
